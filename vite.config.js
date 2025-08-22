@@ -7,5 +7,5 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 
-  // base: "/Weather/", //اسم الريبو بتاعك
+  base: "/Weather/", //اسم الريبو بتاعك
 });

@@ -6,9 +6,9 @@ import News from "./News/News";
 import Photos from "./Photos/Photos";
 import Layout from "./Layout/Layout";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 
-let router = createBrowserRouter([
+let router = createHashRouter([
   {
     path: "",
     element: <Layout />,
