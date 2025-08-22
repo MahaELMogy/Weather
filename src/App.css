@@ -1,0 +1,22 @@
+@import "tailwindcss";
+div.banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./assets//banner.png);
+  min-height: 350px;
+  background-size: cover;
+  padding: 70px 0;
+}
+
+.active {
+  background-color: #dfd0b8;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 20px;
+}
+
+section.Photos .inner:hover div.demo {
+  background-color: rgba(36, 30, 30, 0.5);
+}
+section.Photos .inner:hover a {
+  display: block;
+}
