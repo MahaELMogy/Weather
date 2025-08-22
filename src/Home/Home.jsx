@@ -16,7 +16,7 @@ export default function News() {
   async function getWeather(city = "Cairo") {
     try {
       const req = await Axios.get(
-        `http://api.weatherapi.com/v1/forecast.json?key=b5b77108ceff42e882b210837251206&q=${city}&days=3`
+        `https://api.weatherapi.com/v1/forecast.json?key=b5b77108ceff42e882b210837251206&q=${city}&days=3`
       );
       setArrWeather(req.data);
     } catch (err) {
