@@ -3,10 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+  // function to open Menu
   function OpenMenu() {
     setIsOpen(!isOpen);
   }
+  // function to Close Menu
   function CloseMenu() {
     setIsOpen(false);
   }
