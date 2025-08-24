@@ -44,8 +44,7 @@ export default function News() {
                   }
                 }}
                 placeholder="Write Country To See Weather..."
-                dir="ltr"
-                className="bg-[#222831] w-[90%] outline-0 p-3.5 rounded-4xl m-auto"
+                className="bg-[#222831] w-[90%] outline-0 p-3.5 rounded-4xl m-auto placeholder:text-sm"
               />
               <button onClick={handleSearch}>
                 <a
