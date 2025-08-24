@@ -14,17 +14,17 @@ export default function Navbar() {
 
   return (
     <nav className="bg-[#393E46] text-[#DFD0B8]">
-      <div className="px-6 md:px-28 py-6 md:py-10 flex items-center justify-between">
+      <div className="px-6 md:px-28 py-7 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2">
+          <Link to="/">
             <i className="fa-solid fa-cloud text-4xl md:text-6xl"></i>
             <span className="text-2xl md:text-4xl font-semibold">Weather</span>
-          </div>
-        </Link>
+          </Link>
+        </div>
 
         {/* Desktop Links */}
-        <ul className="hidden md:grid grid-cols-6 gap-4 text-lg">
+        <ul className="hidden md:grid grid-cols-4 gap-4 text-lg">
           <li>
             <NavLink to="">Home</NavLink>
           </li>
