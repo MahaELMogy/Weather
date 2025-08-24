@@ -7,6 +7,9 @@ export default function Navbar() {
   function OpenMenu() {
     setIsOpen(!isOpen);
   }
+  function CloseMenu() {
+    setIsOpen(false);
+  }
 
   return (
     <nav className="bg-[#393E46] text-[#DFD0B8]">
@@ -48,10 +51,18 @@ export default function Navbar() {
           isOpen ? "block" : "hidden"
         }`}
       >
-        <NavLink to="">Home</NavLink>
-        <NavLink to="News">News</NavLink>
-        <NavLink to="Photos">Photos</NavLink>
-        <NavLink to="Contact">Contact</NavLink>
+        <NavLink onClick={CloseMenu} to="">
+          Home
+        </NavLink>
+        <NavLink onClick={CloseMenu} to="News">
+          News
+        </NavLink>
+        <NavLink onClick={CloseMenu} to="Photos">
+          Photos
+        </NavLink>
+        <NavLink onClick={CloseMenu} to="Contact">
+          Contact
+        </NavLink>
       </div>
     </nav>
   );

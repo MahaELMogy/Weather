@@ -37,16 +37,22 @@ export default function News() {
               <input
                 type="text"
                 value={searchCity}
-                onInput={(e) => setSearchCity(e.target.value)}
-                placeholder="Enter your email to subscribe..."
-                className="bg-[#222831] w-[90%] outline-0 p-3.5 rounded-4xl m-auto "
+                onChange={(e) => setSearchCity(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    handleSearch();
+                  }
+                }}
+                placeholder="Write Country To See Weather..."
+                dir="ltr"
+                className="bg-[#222831] w-[90%] outline-0 p-3.5 rounded-4xl m-auto"
               />
               <button onClick={handleSearch}>
                 <a
                   href="#"
-                  className="bg-[#948979] p-2.5 rounded-4xl absolute end-[5.5%] bottom-[5px] hover:text-[white] duration-300"
+                  className="bg-[#948979] p-3 rounded-r-3xl absolute end-[5%] top-0 bottom-0 hover:text-[white] duration-300"
                 >
-                  Subscribe
+                  <i class="fa-solid fa-magnifying-glass"></i>
                 </a>
               </button>
             </div>
@@ -54,10 +60,10 @@ export default function News() {
           {ArrWeather ? (
             <>
               {ArrWeather && (
-                <div className="grid grid-cols-1 gap-6 xl:gap-0 xl:grid-cols-3  text-[#DFD0B8] relative px-28 bottom-[150px]">
+                <div className="grid grid-cols-1 gap-6 xl:gap-0 xl:grid-cols-3 text-[#DFD0B8] relative px-28 bottom-[150px]">
                   {/* DAY 1 */}
                   <div className="bg-[#393E46] pb-6 rounded-lg xl:rounded-none xl:rounded-l-lg overflow-hidden">
-                    <div className="bg-[#191c22] flex justify-between p-2.5  ">
+                    <div className="bg-[#191c22] flex justify-between p-2.5 text-sm sm:text-lg ">
                       <span>
                         {new Date(
                           ArrWeather.forecast.forecastday[0].date
@@ -76,9 +82,9 @@ export default function News() {
                       <p className="font-[400] text-[1.2857142857em] mt-3">
                         {ArrWeather.location.name}
                       </p>
-                      <p className="font-[700] text-[5rem]">
+                      <p className="font-[700] text-[35px] mt-5 sm:text-[5rem]">
                         {ArrWeather.forecast.forecastday[0].day.avgtemp_c}
-                        <span className="relative bottom-[45px] start-[0px]">
+                        <span className="relative bottom-[1.5rem] sm:bottom-[3rem]  start-0">
                           o
                         </span>
                         C
@@ -87,12 +93,13 @@ export default function News() {
                         src={
                           ArrWeather.forecast.forecastday[0].day.condition.icon
                         }
+                        className=""
                         alt="icon weather"
                       />
                       <p className="pb-3.5">
                         {ArrWeather.forecast.forecastday[0].day.condition.text}
                       </p>
-                      <div>
+                      <div className="flex flex-col sm:flex-row text-sm sm:text-lg sm:gap-4 ">
                         <span>
                           <i className="fa-solid fa-umbrella pe-1.5"></i>{" "}
                           {
@@ -101,7 +108,7 @@ export default function News() {
                           }
                           %
                         </span>
-                        <span className="px-2.5">
+                        <span className=" ">
                           <i className="fa-solid fa-wind pe-1.5"></i>{" "}
                           {ArrWeather.forecast.forecastday[0].day.maxwind_kph}
                           km/h
